@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.example.TestCalculatorCsv" time="0.455" tests="79" errors="0" skipped="0" failures="37">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.example.TestCalculatorCsv" time="0.225" tests="79" errors="0" skipped="0" failures="37">
   <properties>
     <property name="java.specification.version" value="22"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-22\bin"/>
-    <property name="sun.java.command" value="C:\Users\manhc\AppData\Local\Temp\surefire1390916816111077174\surefirebooter1734683752053899706.jar C:\Users\manhc\AppData\Local\Temp\surefire1390916816111077174 2024-06-04T16-50-47_774-jvmRun1 surefire11110682971497263676tmp surefire_017415838986315158757tmp"/>
+    <property name="sun.java.command" value="C:\Users\manhc\AppData\Local\Temp\surefire5088990455304051112\surefirebooter8984655072212107250.jar C:\Users\manhc\AppData\Local\Temp\surefire5088990455304051112 2024-06-11T12-53-58_059-jvmRun1 surefire5951377322710549696tmp surefire_016351333038638336078tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="c:\Users\manhc\OneDrive\Documents\VPProjects\demo\target\test-classes;c:\Users\manhc\OneDrive\Documents\VPProjects\demo\target\classes;C:\Users\manhc\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.0\junit-jupiter-engine-5.10.0.jar;C:\Users\manhc\.m2\repository\org\junit\platform\junit-platform-engine\1.10.0\junit-platform-engine-1.10.0.jar;C:\Users\manhc\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\manhc\.m2\repository\org\junit\platform\junit-platform-commons\1.10.0\junit-platform-commons-1.10.0.jar;C:\Users\manhc\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.0\junit-jupiter-api-5.10.0.jar;C:\Users\manhc\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\manhc\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.0\junit-jupiter-5.10.0.jar;C:\Users\manhc\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.1\junit-jupiter-params-5.10.1.jar;C:\Users\manhc\.m2\repository\org\junit\vintage\junit-vintage-engine\5.10.1\junit-vintage-engine-5.10.1.jar;C:\Users\manhc\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\manhc\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\manhc\.m2\repository\org\junit\platform\junit-platform-suite-engine\1.10.1\junit-platform-suite-engine-1.10.1.jar;C:\Users\manhc\.m2\repository\org\junit\platform\junit-platform-suite-api\1.10.1\junit-platform-suite-api-1.10.1.jar;C:\Users\manhc\.m2\repository\org\junit\platform\junit-platform-suite-commons\1.10.1\junit-platform-suite-commons-1.10.1.jar;C:\Users\manhc\.m2\repository\org\junit\platform\junit-platform-launcher\1.10.1\junit-platform-launcher-1.10.1.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\manhc\AppData\Local\Temp\surefire1390916816111077174\surefirebooter1734683752053899706.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\manhc\AppData\Local\Temp\surefire5088990455304051112\surefirebooter8984655072212107250.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="22+36-2370"/>
@@ -58,9 +58,9 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="66.0"/>
   </properties>
-  <testcase name="testAdd{int, int, int}[1]" classname="com.example.TestCalculatorCsv" time="0.062"/>
-  <testcase name="testAdd{int, int, int}[2]" classname="com.example.TestCalculatorCsv" time="0.001"/>
-  <testcase name="testAdd{int, int, int}[3]" classname="com.example.TestCalculatorCsv" time="0.025">
+  <testcase name="testAdd{int, int, int}[1]" classname="com.example.TestCalculatorCsv" time="0.02"/>
+  <testcase name="testAdd{int, int, int}[2]" classname="com.example.TestCalculatorCsv" time="0"/>
+  <testcase name="testAdd{int, int, int}[3]" classname="com.example.TestCalculatorCsv" time="0.011">
     <failure message="expected:&lt;12&gt; but was:&lt;8&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<12> but was:<8>
 	at com.example.TestCalculatorCsv.testAdd(TestCalculatorCsv.java:14)
 ]]></failure>
@@ -76,142 +76,142 @@
 ]]></failure>
   </testcase>
   <testcase name="testAdd{int, int, int}[6]" classname="com.example.TestCalculatorCsv" time="0.001"/>
-  <testcase name="testAdd{int, int, int}[7]" classname="com.example.TestCalculatorCsv" time="0.002"/>
-  <testcase name="testAdd{int, int, int}[8]" classname="com.example.TestCalculatorCsv" time="0.002"/>
-  <testcase name="testAdd{int, int, int}[9]" classname="com.example.TestCalculatorCsv" time="0.003"/>
-  <testcase name="testAdd{int, int, int}[10]" classname="com.example.TestCalculatorCsv" time="0.001"/>
-  <testcase name="testAdd{int, int, int}[11]" classname="com.example.TestCalculatorCsv" time="0.001"/>
-  <testcase name="testAdd{int, int, int}[12]" classname="com.example.TestCalculatorCsv" time="0.003">
+  <testcase name="testAdd{int, int, int}[7]" classname="com.example.TestCalculatorCsv" time="0"/>
+  <testcase name="testAdd{int, int, int}[8]" classname="com.example.TestCalculatorCsv" time="0.001"/>
+  <testcase name="testAdd{int, int, int}[9]" classname="com.example.TestCalculatorCsv" time="0"/>
+  <testcase name="testAdd{int, int, int}[10]" classname="com.example.TestCalculatorCsv" time="0"/>
+  <testcase name="testAdd{int, int, int}[11]" classname="com.example.TestCalculatorCsv" time="0"/>
+  <testcase name="testAdd{int, int, int}[12]" classname="com.example.TestCalculatorCsv" time="0.001">
     <failure message="expected:&lt;4&gt; but was:&lt;25&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<4> but was:<25>
 	at com.example.TestCalculatorCsv.testAdd(TestCalculatorCsv.java:14)
 ]]></failure>
   </testcase>
-  <testcase name="testAdd{int, int, int}[13]" classname="com.example.TestCalculatorCsv" time="0.004">
+  <testcase name="testAdd{int, int, int}[13]" classname="com.example.TestCalculatorCsv" time="0.001">
     <failure message="expected:&lt;6&gt; but was:&lt;14&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<6> but was:<14>
 	at com.example.TestCalculatorCsv.testAdd(TestCalculatorCsv.java:14)
 ]]></failure>
   </testcase>
-  <testcase name="testAdd{int, int, int}[14]" classname="com.example.TestCalculatorCsv" time="0.003">
+  <testcase name="testAdd{int, int, int}[14]" classname="com.example.TestCalculatorCsv" time="0.001">
     <failure message="expected:&lt;2&gt; but was:&lt;12&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<2> but was:<12>
 	at com.example.TestCalculatorCsv.testAdd(TestCalculatorCsv.java:14)
 ]]></failure>
   </testcase>
-  <testcase name="testAdd{int, int, int}[15]" classname="com.example.TestCalculatorCsv" time="0.001"/>
-  <testcase name="testAdd{int, int, int}[16]" classname="com.example.TestCalculatorCsv" time="0.002"/>
-  <testcase name="testAdd{int, int, int}[17]" classname="com.example.TestCalculatorCsv" time="0.002">
+  <testcase name="testAdd{int, int, int}[15]" classname="com.example.TestCalculatorCsv" time="0"/>
+  <testcase name="testAdd{int, int, int}[16]" classname="com.example.TestCalculatorCsv" time="0.001"/>
+  <testcase name="testAdd{int, int, int}[17]" classname="com.example.TestCalculatorCsv" time="0.001">
     <failure message="expected:&lt;4&gt; but was:&lt;8&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<4> but was:<8>
 	at com.example.TestCalculatorCsv.testAdd(TestCalculatorCsv.java:14)
 ]]></failure>
   </testcase>
-  <testcase name="testAdd{int, int, int}[18]" classname="com.example.TestCalculatorCsv" time="0.003">
+  <testcase name="testAdd{int, int, int}[18]" classname="com.example.TestCalculatorCsv" time="0.001">
     <failure message="expected:&lt;4&gt; but was:&lt;12&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<4> but was:<12>
 	at com.example.TestCalculatorCsv.testAdd(TestCalculatorCsv.java:14)
 ]]></failure>
   </testcase>
-  <testcase name="testAdd{int, int, int}[19]" classname="com.example.TestCalculatorCsv" time="0.004">
+  <testcase name="testAdd{int, int, int}[19]" classname="com.example.TestCalculatorCsv" time="0.001">
     <failure message="expected:&lt;0&gt; but was:&lt;20&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<0> but was:<20>
 	at com.example.TestCalculatorCsv.testAdd(TestCalculatorCsv.java:14)
 ]]></failure>
   </testcase>
-  <testcase name="testSubtract{int, int, int}[1]" classname="com.example.TestCalculatorCsv" time="0.002"/>
-  <testcase name="testSubtract{int, int, int}[2]" classname="com.example.TestCalculatorCsv" time="0.003">
+  <testcase name="testSubtract{int, int, int}[1]" classname="com.example.TestCalculatorCsv" time="0.001"/>
+  <testcase name="testSubtract{int, int, int}[2]" classname="com.example.TestCalculatorCsv" time="0.001">
     <failure message="expected:&lt;1&gt; but was:&lt;-1&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<1> but was:<-1>
 	at com.example.TestCalculatorCsv.testSubtract(TestCalculatorCsv.java:21)
 ]]></failure>
   </testcase>
-  <testcase name="testSubtract{int, int, int}[3]" classname="com.example.TestCalculatorCsv" time="0.002"/>
-  <testcase name="testSubtract{int, int, int}[4]" classname="com.example.TestCalculatorCsv" time="0.003">
+  <testcase name="testSubtract{int, int, int}[3]" classname="com.example.TestCalculatorCsv" time="0.001"/>
+  <testcase name="testSubtract{int, int, int}[4]" classname="com.example.TestCalculatorCsv" time="0.001">
     <failure message="expected:&lt;5&gt; but was:&lt;4&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<5> but was:<4>
 	at com.example.TestCalculatorCsv.testSubtract(TestCalculatorCsv.java:21)
 ]]></failure>
   </testcase>
-  <testcase name="testSubtract{int, int, int}[5]" classname="com.example.TestCalculatorCsv" time="0.001"/>
-  <testcase name="testSubtract{int, int, int}[6]" classname="com.example.TestCalculatorCsv" time="0.003">
+  <testcase name="testSubtract{int, int, int}[5]" classname="com.example.TestCalculatorCsv" time="0"/>
+  <testcase name="testSubtract{int, int, int}[6]" classname="com.example.TestCalculatorCsv" time="0.001">
     <failure message="expected:&lt;10&gt; but was:&lt;-10&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<10> but was:<-10>
 	at com.example.TestCalculatorCsv.testSubtract(TestCalculatorCsv.java:21)
 ]]></failure>
   </testcase>
-  <testcase name="testSubtract{int, int, int}[7]" classname="com.example.TestCalculatorCsv" time="0.003"/>
+  <testcase name="testSubtract{int, int, int}[7]" classname="com.example.TestCalculatorCsv" time="0.001"/>
   <testcase name="testSubtract{int, int, int}[8]" classname="com.example.TestCalculatorCsv" time="0.002">
     <failure message="expected:&lt;10&gt; but was:&lt;0&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<10> but was:<0>
 	at com.example.TestCalculatorCsv.testSubtract(TestCalculatorCsv.java:21)
 ]]></failure>
   </testcase>
-  <testcase name="testSubtract{int, int, int}[9]" classname="com.example.TestCalculatorCsv" time="0.003"/>
-  <testcase name="testSubtract{int, int, int}[10]" classname="com.example.TestCalculatorCsv" time="0.005">
+  <testcase name="testSubtract{int, int, int}[9]" classname="com.example.TestCalculatorCsv" time="0.001"/>
+  <testcase name="testSubtract{int, int, int}[10]" classname="com.example.TestCalculatorCsv" time="0.002">
     <failure message="expected:&lt;1&gt; but was:&lt;0&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<1> but was:<0>
 	at com.example.TestCalculatorCsv.testSubtract(TestCalculatorCsv.java:21)
 ]]></failure>
   </testcase>
-  <testcase name="testSubtract{int, int, int}[11]" classname="com.example.TestCalculatorCsv" time="0.001"/>
-  <testcase name="testSubtract{int, int, int}[12]" classname="com.example.TestCalculatorCsv" time="0.002">
+  <testcase name="testSubtract{int, int, int}[11]" classname="com.example.TestCalculatorCsv" time="0"/>
+  <testcase name="testSubtract{int, int, int}[12]" classname="com.example.TestCalculatorCsv" time="0.001">
     <failure message="expected:&lt;-1&gt; but was:&lt;0&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<-1> but was:<0>
 	at com.example.TestCalculatorCsv.testSubtract(TestCalculatorCsv.java:21)
 ]]></failure>
   </testcase>
-  <testcase name="testSubtract{int, int, int}[13]" classname="com.example.TestCalculatorCsv" time="0.002"/>
-  <testcase name="testSubtract{int, int, int}[14]" classname="com.example.TestCalculatorCsv" time="0.002">
+  <testcase name="testSubtract{int, int, int}[13]" classname="com.example.TestCalculatorCsv" time="0.001"/>
+  <testcase name="testSubtract{int, int, int}[14]" classname="com.example.TestCalculatorCsv" time="0.001">
     <failure message="expected:&lt;6&gt; but was:&lt;5&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<6> but was:<5>
 	at com.example.TestCalculatorCsv.testSubtract(TestCalculatorCsv.java:21)
 ]]></failure>
   </testcase>
-  <testcase name="testSubtract{int, int, int}[15]" classname="com.example.TestCalculatorCsv" time="0"/>
-  <testcase name="testSubtract{int, int, int}[16]" classname="com.example.TestCalculatorCsv" time="0.002">
+  <testcase name="testSubtract{int, int, int}[15]" classname="com.example.TestCalculatorCsv" time="0.001"/>
+  <testcase name="testSubtract{int, int, int}[16]" classname="com.example.TestCalculatorCsv" time="0.001">
     <failure message="expected:&lt;5&gt; but was:&lt;0&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<5> but was:<0>
 	at com.example.TestCalculatorCsv.testSubtract(TestCalculatorCsv.java:21)
 ]]></failure>
   </testcase>
-  <testcase name="testSubtract{int, int, int}[17]" classname="com.example.TestCalculatorCsv" time="0.001"/>
+  <testcase name="testSubtract{int, int, int}[17]" classname="com.example.TestCalculatorCsv" time="0"/>
   <testcase name="testSubtract{int, int, int}[18]" classname="com.example.TestCalculatorCsv" time="0.001">
     <failure message="expected:&lt;11&gt; but was:&lt;10&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<11> but was:<10>
 	at com.example.TestCalculatorCsv.testSubtract(TestCalculatorCsv.java:21)
 ]]></failure>
   </testcase>
-  <testcase name="testSubtract{int, int, int}[19]" classname="com.example.TestCalculatorCsv" time="0.002"/>
-  <testcase name="testSubtract{int, int, int}[20]" classname="com.example.TestCalculatorCsv" time="0.002">
+  <testcase name="testSubtract{int, int, int}[19]" classname="com.example.TestCalculatorCsv" time="0.001"/>
+  <testcase name="testSubtract{int, int, int}[20]" classname="com.example.TestCalculatorCsv" time="0.001">
     <failure message="expected:&lt;9&gt; but was:&lt;10&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<9> but was:<10>
 	at com.example.TestCalculatorCsv.testSubtract(TestCalculatorCsv.java:21)
 ]]></failure>
   </testcase>
   <testcase name="testDivide{int, int, int}[1]" classname="com.example.TestCalculatorCsv" time="0.001"/>
-  <testcase name="testDivide{int, int, int}[2]" classname="com.example.TestCalculatorCsv" time="0.002">
+  <testcase name="testDivide{int, int, int}[2]" classname="com.example.TestCalculatorCsv" time="0.001">
     <failure message="expected:&lt;5&gt; but was:&lt;4&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<5> but was:<4>
 	at com.example.TestCalculatorCsv.testDivide(TestCalculatorCsv.java:35)
 ]]></failure>
   </testcase>
-  <testcase name="testDivide{int, int, int}[3]" classname="com.example.TestCalculatorCsv" time="0.001"/>
-  <testcase name="testDivide{int, int, int}[4]" classname="com.example.TestCalculatorCsv" time="0.001">
+  <testcase name="testDivide{int, int, int}[3]" classname="com.example.TestCalculatorCsv" time="0"/>
+  <testcase name="testDivide{int, int, int}[4]" classname="com.example.TestCalculatorCsv" time="0">
     <failure message="expected:&lt;3&gt; but was:&lt;2&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<3> but was:<2>
 	at com.example.TestCalculatorCsv.testDivide(TestCalculatorCsv.java:35)
 ]]></failure>
   </testcase>
-  <testcase name="testDivide{int, int, int}[5]" classname="com.example.TestCalculatorCsv" time="0.001"/>
+  <testcase name="testDivide{int, int, int}[5]" classname="com.example.TestCalculatorCsv" time="0"/>
   <testcase name="testDivide{int, int, int}[6]" classname="com.example.TestCalculatorCsv" time="0.001">
     <failure message="expected:&lt;4&gt; but was:&lt;3&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<4> but was:<3>
 	at com.example.TestCalculatorCsv.testDivide(TestCalculatorCsv.java:35)
 ]]></failure>
   </testcase>
   <testcase name="testDivide{int, int, int}[7]" classname="com.example.TestCalculatorCsv" time="0"/>
-  <testcase name="testDivide{int, int, int}[8]" classname="com.example.TestCalculatorCsv" time="0.002">
+  <testcase name="testDivide{int, int, int}[8]" classname="com.example.TestCalculatorCsv" time="0.001">
     <failure message="expected:&lt;4&gt; but was:&lt;5&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<4> but was:<5>
 	at com.example.TestCalculatorCsv.testDivide(TestCalculatorCsv.java:35)
 ]]></failure>
   </testcase>
-  <testcase name="testDivide{int, int, int}[9]" classname="com.example.TestCalculatorCsv" time="0.001"/>
-  <testcase name="testDivide{int, int, int}[10]" classname="com.example.TestCalculatorCsv" time="0.001">
+  <testcase name="testDivide{int, int, int}[9]" classname="com.example.TestCalculatorCsv" time="0"/>
+  <testcase name="testDivide{int, int, int}[10]" classname="com.example.TestCalculatorCsv" time="0">
     <failure message="expected:&lt;3&gt; but was:&lt;2&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<3> but was:<2>
 	at com.example.TestCalculatorCsv.testDivide(TestCalculatorCsv.java:35)
 ]]></failure>
   </testcase>
-  <testcase name="testDivide{int, int, int}[11]" classname="com.example.TestCalculatorCsv" time="0.001"/>
+  <testcase name="testDivide{int, int, int}[11]" classname="com.example.TestCalculatorCsv" time="0"/>
   <testcase name="testDivide{int, int, int}[12]" classname="com.example.TestCalculatorCsv" time="0.001">
     <failure message="expected:&lt;6&gt; but was:&lt;5&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<6> but was:<5>
 	at com.example.TestCalculatorCsv.testDivide(TestCalculatorCsv.java:35)
 ]]></failure>
   </testcase>
-  <testcase name="testDivide{int, int, int}[13]" classname="com.example.TestCalculatorCsv" time="0.001"/>
-  <testcase name="testDivide{int, int, int}[14]" classname="com.example.TestCalculatorCsv" time="0.001"/>
-  <testcase name="testDivide{int, int, int}[15]" classname="com.example.TestCalculatorCsv" time="0"/>
+  <testcase name="testDivide{int, int, int}[13]" classname="com.example.TestCalculatorCsv" time="0"/>
+  <testcase name="testDivide{int, int, int}[14]" classname="com.example.TestCalculatorCsv" time="0"/>
+  <testcase name="testDivide{int, int, int}[15]" classname="com.example.TestCalculatorCsv" time="0.001"/>
   <testcase name="testDivide{int, int, int}[16]" classname="com.example.TestCalculatorCsv" time="0"/>
   <testcase name="testDivide{int, int, int}[17]" classname="com.example.TestCalculatorCsv" time="0.001"/>
   <testcase name="testDivide{int, int, int}[18]" classname="com.example.TestCalculatorCsv" time="0.002">
@@ -219,49 +219,49 @@
 	at com.example.TestCalculatorCsv.testDivide(TestCalculatorCsv.java:35)
 ]]></failure>
   </testcase>
-  <testcase name="testDivide{int, int, int}[19]" classname="com.example.TestCalculatorCsv" time="0.001"/>
-  <testcase name="testDivide{int, int, int}[20]" classname="com.example.TestCalculatorCsv" time="0.002">
+  <testcase name="testDivide{int, int, int}[19]" classname="com.example.TestCalculatorCsv" time="0.003"/>
+  <testcase name="testDivide{int, int, int}[20]" classname="com.example.TestCalculatorCsv" time="0.001">
     <failure message="expected:&lt;6&gt; but was:&lt;10&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<6> but was:<10>
 	at com.example.TestCalculatorCsv.testDivide(TestCalculatorCsv.java:35)
 ]]></failure>
   </testcase>
   <testcase name="testMultiply{int, int, int}[1]" classname="com.example.TestCalculatorCsv" time="0.001"/>
-  <testcase name="testMultiply{int, int, int}[2]" classname="com.example.TestCalculatorCsv" time="0.002">
+  <testcase name="testMultiply{int, int, int}[2]" classname="com.example.TestCalculatorCsv" time="0.001">
     <failure message="expected:&lt;21&gt; but was:&lt;20&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<21> but was:<20>
 	at com.example.TestCalculatorCsv.testMultiply(TestCalculatorCsv.java:28)
 ]]></failure>
   </testcase>
   <testcase name="testMultiply{int, int, int}[3]" classname="com.example.TestCalculatorCsv" time="0.001"/>
-  <testcase name="testMultiply{int, int, int}[4]" classname="com.example.TestCalculatorCsv" time="0.002">
+  <testcase name="testMultiply{int, int, int}[4]" classname="com.example.TestCalculatorCsv" time="0.001">
     <failure message="expected:&lt;33&gt; but was:&lt;32&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<33> but was:<32>
 	at com.example.TestCalculatorCsv.testMultiply(TestCalculatorCsv.java:28)
 ]]></failure>
   </testcase>
   <testcase name="testMultiply{int, int, int}[5]" classname="com.example.TestCalculatorCsv" time="0.001"/>
-  <testcase name="testMultiply{int, int, int}[6]" classname="com.example.TestCalculatorCsv" time="0.001">
+  <testcase name="testMultiply{int, int, int}[6]" classname="com.example.TestCalculatorCsv" time="0.002">
     <failure message="expected:&lt;500&gt; but was:&lt;600&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<500> but was:<600>
 	at com.example.TestCalculatorCsv.testMultiply(TestCalculatorCsv.java:28)
 ]]></failure>
   </testcase>
-  <testcase name="testMultiply{int, int, int}[7]" classname="com.example.TestCalculatorCsv" time="0.001"/>
-  <testcase name="testMultiply{int, int, int}[8]" classname="com.example.TestCalculatorCsv" time="0.001">
+  <testcase name="testMultiply{int, int, int}[7]" classname="com.example.TestCalculatorCsv" time="0"/>
+  <testcase name="testMultiply{int, int, int}[8]" classname="com.example.TestCalculatorCsv" time="0.002">
     <failure message="expected:&lt;2600&gt; but was:&lt;2500&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<2600> but was:<2500>
 	at com.example.TestCalculatorCsv.testMultiply(TestCalculatorCsv.java:28)
 ]]></failure>
   </testcase>
   <testcase name="testMultiply{int, int, int}[9]" classname="com.example.TestCalculatorCsv" time="0.001"/>
-  <testcase name="testMultiply{int, int, int}[10]" classname="com.example.TestCalculatorCsv" time="0.001">
+  <testcase name="testMultiply{int, int, int}[10]" classname="com.example.TestCalculatorCsv" time="0.002">
     <failure message="expected:&lt;2&gt; but was:&lt;1&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<2> but was:<1>
 	at com.example.TestCalculatorCsv.testMultiply(TestCalculatorCsv.java:28)
 ]]></failure>
   </testcase>
-  <testcase name="testMultiply{int, int, int}[11]" classname="com.example.TestCalculatorCsv" time="0.002"/>
-  <testcase name="testMultiply{int, int, int}[12]" classname="com.example.TestCalculatorCsv" time="0.002">
+  <testcase name="testMultiply{int, int, int}[11]" classname="com.example.TestCalculatorCsv" time="0"/>
+  <testcase name="testMultiply{int, int, int}[12]" classname="com.example.TestCalculatorCsv" time="0.001">
     <failure message="expected:&lt;35&gt; but was:&lt;36&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<35> but was:<36>
 	at com.example.TestCalculatorCsv.testMultiply(TestCalculatorCsv.java:28)
 ]]></failure>
   </testcase>
-  <testcase name="testMultiply{int, int, int}[13]" classname="com.example.TestCalculatorCsv" time="0.001"/>
+  <testcase name="testMultiply{int, int, int}[13]" classname="com.example.TestCalculatorCsv" time="0"/>
   <testcase name="testMultiply{int, int, int}[14]" classname="com.example.TestCalculatorCsv" time="0.001">
     <failure message="expected:&lt;15&gt; but was:&lt;16&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<15> but was:<16>
 	at com.example.TestCalculatorCsv.testMultiply(TestCalculatorCsv.java:28)
@@ -274,13 +274,13 @@
 ]]></failure>
   </testcase>
   <testcase name="testMultiply{int, int, int}[17]" classname="com.example.TestCalculatorCsv" time="0.001"/>
-  <testcase name="testMultiply{int, int, int}[18]" classname="com.example.TestCalculatorCsv" time="0.001">
+  <testcase name="testMultiply{int, int, int}[18]" classname="com.example.TestCalculatorCsv" time="0.003">
     <failure message="expected:&lt;145&gt; but was:&lt;144&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<145> but was:<144>
 	at com.example.TestCalculatorCsv.testMultiply(TestCalculatorCsv.java:28)
 ]]></failure>
   </testcase>
   <testcase name="testMultiply{int, int, int}[19]" classname="com.example.TestCalculatorCsv" time="0.001"/>
-  <testcase name="testMultiply{int, int, int}[20]" classname="com.example.TestCalculatorCsv" time="0.001">
+  <testcase name="testMultiply{int, int, int}[20]" classname="com.example.TestCalculatorCsv" time="0.002">
     <failure message="expected:&lt;195&gt; but was:&lt;196&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<195> but was:<196>
 	at com.example.TestCalculatorCsv.testMultiply(TestCalculatorCsv.java:28)
 ]]></failure>

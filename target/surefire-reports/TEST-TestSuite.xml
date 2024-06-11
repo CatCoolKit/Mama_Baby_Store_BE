@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="0.01" tests="4" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="0.004" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="22"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-22\bin"/>
-    <property name="sun.java.command" value="C:\Users\manhc\AppData\Local\Temp\surefire1390916816111077174\surefirebooter1734683752053899706.jar C:\Users\manhc\AppData\Local\Temp\surefire1390916816111077174 2024-06-04T16-50-47_774-jvmRun1 surefire11110682971497263676tmp surefire_017415838986315158757tmp"/>
+    <property name="sun.java.command" value="C:\Users\manhc\AppData\Local\Temp\surefire5088990455304051112\surefirebooter8984655072212107250.jar C:\Users\manhc\AppData\Local\Temp\surefire5088990455304051112 2024-06-11T12-53-58_059-jvmRun1 surefire5951377322710549696tmp surefire_016351333038638336078tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="c:\Users\manhc\OneDrive\Documents\VPProjects\demo\target\test-classes;c:\Users\manhc\OneDrive\Documents\VPProjects\demo\target\classes;C:\Users\manhc\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.0\junit-jupiter-engine-5.10.0.jar;C:\Users\manhc\.m2\repository\org\junit\platform\junit-platform-engine\1.10.0\junit-platform-engine-1.10.0.jar;C:\Users\manhc\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\manhc\.m2\repository\org\junit\platform\junit-platform-commons\1.10.0\junit-platform-commons-1.10.0.jar;C:\Users\manhc\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.0\junit-jupiter-api-5.10.0.jar;C:\Users\manhc\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\manhc\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.0\junit-jupiter-5.10.0.jar;C:\Users\manhc\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.1\junit-jupiter-params-5.10.1.jar;C:\Users\manhc\.m2\repository\org\junit\vintage\junit-vintage-engine\5.10.1\junit-vintage-engine-5.10.1.jar;C:\Users\manhc\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\manhc\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\manhc\.m2\repository\org\junit\platform\junit-platform-suite-engine\1.10.1\junit-platform-suite-engine-1.10.1.jar;C:\Users\manhc\.m2\repository\org\junit\platform\junit-platform-suite-api\1.10.1\junit-platform-suite-api-1.10.1.jar;C:\Users\manhc\.m2\repository\org\junit\platform\junit-platform-suite-commons\1.10.1\junit-platform-suite-commons-1.10.1.jar;C:\Users\manhc\.m2\repository\org\junit\platform\junit-platform-launcher\1.10.1\junit-platform-launcher-1.10.1.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\manhc\AppData\Local\Temp\surefire1390916816111077174\surefirebooter1734683752053899706.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\manhc\AppData\Local\Temp\surefire5088990455304051112\surefirebooter8984655072212107250.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="22+36-2370"/>
@@ -59,7 +59,7 @@
     <property name="java.class.version" value="66.0"/>
   </properties>
   <testcase name="demoTest" classname="com.example.packageTestDemo.TestDemo_Fixed" time="0"/>
-  <testcase name="testIsPasswordTooLong" classname="com.example.packageTestPassword.TestPasswordValidator" time="0"/>
-  <testcase name="testIsPasswordStrong" classname="com.example.packageTestPassword.TestPasswordValidator" time="0"/>
-  <testcase name="testIsPasswordNotStrong" classname="com.example.packageTestPassword.TestPasswordValidator" time="0.006"/>
+  <testcase name="testIsPasswordTooLong" classname="com.example.packageTestPassword.TestPasswordValidator" time="0.001"/>
+  <testcase name="testIsPasswordStrong" classname="com.example.packageTestPassword.TestPasswordValidator" time="0.001"/>
+  <testcase name="testIsPasswordNotStrong" classname="com.example.packageTestPassword.TestPasswordValidator" time="0"/>
 </testsuite>
