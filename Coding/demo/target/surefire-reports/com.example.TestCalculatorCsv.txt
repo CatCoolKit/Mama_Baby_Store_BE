@@ -1,0 +1,152 @@
+-------------------------------------------------------------------------------
+Test set: com.example.TestCalculatorCsv
+-------------------------------------------------------------------------------
+Tests run: 79, Failures: 37, Errors: 0, Skipped: 0, Time elapsed: 0.455 s <<< FAILURE! - in com.example.TestCalculatorCsv
+testAdd{int, int, int}[3]  Time elapsed: 0.025 s  <<< FAILURE!
+java.lang.AssertionError: expected:<12> but was:<8>
+	at com.example.TestCalculatorCsv.testAdd(TestCalculatorCsv.java:14)
+
+testAdd{int, int, int}[4]  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.AssertionError: expected:<32> but was:<12>
+	at com.example.TestCalculatorCsv.testAdd(TestCalculatorCsv.java:14)
+
+testAdd{int, int, int}[5]  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.AssertionError: expected:<100> but was:<20>
+	at com.example.TestCalculatorCsv.testAdd(TestCalculatorCsv.java:14)
+
+testAdd{int, int, int}[12]  Time elapsed: 0.003 s  <<< FAILURE!
+java.lang.AssertionError: expected:<4> but was:<25>
+	at com.example.TestCalculatorCsv.testAdd(TestCalculatorCsv.java:14)
+
+testAdd{int, int, int}[13]  Time elapsed: 0.004 s  <<< FAILURE!
+java.lang.AssertionError: expected:<6> but was:<14>
+	at com.example.TestCalculatorCsv.testAdd(TestCalculatorCsv.java:14)
+
+testAdd{int, int, int}[14]  Time elapsed: 0.003 s  <<< FAILURE!
+java.lang.AssertionError: expected:<2> but was:<12>
+	at com.example.TestCalculatorCsv.testAdd(TestCalculatorCsv.java:14)
+
+testAdd{int, int, int}[17]  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.AssertionError: expected:<4> but was:<8>
+	at com.example.TestCalculatorCsv.testAdd(TestCalculatorCsv.java:14)
+
+testAdd{int, int, int}[18]  Time elapsed: 0.003 s  <<< FAILURE!
+java.lang.AssertionError: expected:<4> but was:<12>
+	at com.example.TestCalculatorCsv.testAdd(TestCalculatorCsv.java:14)
+
+testAdd{int, int, int}[19]  Time elapsed: 0.004 s  <<< FAILURE!
+java.lang.AssertionError: expected:<0> but was:<20>
+	at com.example.TestCalculatorCsv.testAdd(TestCalculatorCsv.java:14)
+
+testSubtract{int, int, int}[2]  Time elapsed: 0.003 s  <<< FAILURE!
+java.lang.AssertionError: expected:<1> but was:<-1>
+	at com.example.TestCalculatorCsv.testSubtract(TestCalculatorCsv.java:21)
+
+testSubtract{int, int, int}[4]  Time elapsed: 0.003 s  <<< FAILURE!
+java.lang.AssertionError: expected:<5> but was:<4>
+	at com.example.TestCalculatorCsv.testSubtract(TestCalculatorCsv.java:21)
+
+testSubtract{int, int, int}[6]  Time elapsed: 0.003 s  <<< FAILURE!
+java.lang.AssertionError: expected:<10> but was:<-10>
+	at com.example.TestCalculatorCsv.testSubtract(TestCalculatorCsv.java:21)
+
+testSubtract{int, int, int}[8]  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.AssertionError: expected:<10> but was:<0>
+	at com.example.TestCalculatorCsv.testSubtract(TestCalculatorCsv.java:21)
+
+testSubtract{int, int, int}[10]  Time elapsed: 0.005 s  <<< FAILURE!
+java.lang.AssertionError: expected:<1> but was:<0>
+	at com.example.TestCalculatorCsv.testSubtract(TestCalculatorCsv.java:21)
+
+testSubtract{int, int, int}[12]  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.AssertionError: expected:<-1> but was:<0>
+	at com.example.TestCalculatorCsv.testSubtract(TestCalculatorCsv.java:21)
+
+testSubtract{int, int, int}[14]  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.AssertionError: expected:<6> but was:<5>
+	at com.example.TestCalculatorCsv.testSubtract(TestCalculatorCsv.java:21)
+
+testSubtract{int, int, int}[16]  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.AssertionError: expected:<5> but was:<0>
+	at com.example.TestCalculatorCsv.testSubtract(TestCalculatorCsv.java:21)
+
+testSubtract{int, int, int}[18]  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError: expected:<11> but was:<10>
+	at com.example.TestCalculatorCsv.testSubtract(TestCalculatorCsv.java:21)
+
+testSubtract{int, int, int}[20]  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.AssertionError: expected:<9> but was:<10>
+	at com.example.TestCalculatorCsv.testSubtract(TestCalculatorCsv.java:21)
+
+testDivide{int, int, int}[2]  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.AssertionError: expected:<5> but was:<4>
+	at com.example.TestCalculatorCsv.testDivide(TestCalculatorCsv.java:35)
+
+testDivide{int, int, int}[4]  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError: expected:<3> but was:<2>
+	at com.example.TestCalculatorCsv.testDivide(TestCalculatorCsv.java:35)
+
+testDivide{int, int, int}[6]  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError: expected:<4> but was:<3>
+	at com.example.TestCalculatorCsv.testDivide(TestCalculatorCsv.java:35)
+
+testDivide{int, int, int}[8]  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.AssertionError: expected:<4> but was:<5>
+	at com.example.TestCalculatorCsv.testDivide(TestCalculatorCsv.java:35)
+
+testDivide{int, int, int}[10]  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError: expected:<3> but was:<2>
+	at com.example.TestCalculatorCsv.testDivide(TestCalculatorCsv.java:35)
+
+testDivide{int, int, int}[12]  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError: expected:<6> but was:<5>
+	at com.example.TestCalculatorCsv.testDivide(TestCalculatorCsv.java:35)
+
+testDivide{int, int, int}[18]  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.AssertionError: expected:<11> but was:<10>
+	at com.example.TestCalculatorCsv.testDivide(TestCalculatorCsv.java:35)
+
+testDivide{int, int, int}[20]  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.AssertionError: expected:<6> but was:<10>
+	at com.example.TestCalculatorCsv.testDivide(TestCalculatorCsv.java:35)
+
+testMultiply{int, int, int}[2]  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.AssertionError: expected:<21> but was:<20>
+	at com.example.TestCalculatorCsv.testMultiply(TestCalculatorCsv.java:28)
+
+testMultiply{int, int, int}[4]  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.AssertionError: expected:<33> but was:<32>
+	at com.example.TestCalculatorCsv.testMultiply(TestCalculatorCsv.java:28)
+
+testMultiply{int, int, int}[6]  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError: expected:<500> but was:<600>
+	at com.example.TestCalculatorCsv.testMultiply(TestCalculatorCsv.java:28)
+
+testMultiply{int, int, int}[8]  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError: expected:<2600> but was:<2500>
+	at com.example.TestCalculatorCsv.testMultiply(TestCalculatorCsv.java:28)
+
+testMultiply{int, int, int}[10]  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError: expected:<2> but was:<1>
+	at com.example.TestCalculatorCsv.testMultiply(TestCalculatorCsv.java:28)
+
+testMultiply{int, int, int}[12]  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.AssertionError: expected:<35> but was:<36>
+	at com.example.TestCalculatorCsv.testMultiply(TestCalculatorCsv.java:28)
+
+testMultiply{int, int, int}[14]  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError: expected:<15> but was:<16>
+	at com.example.TestCalculatorCsv.testMultiply(TestCalculatorCsv.java:28)
+
+testMultiply{int, int, int}[16]  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError: expected:<105> but was:<100>
+	at com.example.TestCalculatorCsv.testMultiply(TestCalculatorCsv.java:28)
+
+testMultiply{int, int, int}[18]  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError: expected:<145> but was:<144>
+	at com.example.TestCalculatorCsv.testMultiply(TestCalculatorCsv.java:28)
+
+testMultiply{int, int, int}[20]  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError: expected:<195> but was:<196>
+	at com.example.TestCalculatorCsv.testMultiply(TestCalculatorCsv.java:28)
+
