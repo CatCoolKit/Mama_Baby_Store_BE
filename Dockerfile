@@ -1,20 +1,13 @@
-# Sử dụng OpenJDK 21 làm base image
-FROM openjdk:21-jdk
-
-# Đặt thư mục làm việc trong container
-WORKDIR /app
-
-# Sao chép nội dung hiện tại vào thư mục làm việc trong container
+FROM eclipse-temurin:21-jdk AS build
 COPY . /app
+WORKDIR /app
+RUN ./gradlew bootJar
+RUN mv -f build/libs/*.jar app.jar
 
-# Cập nhật danh sách package và cài đặt Maven
-RUN apt-get update && apt-get install -y maven
-
-# Kiểm tra phiên bản JDK
-RUN java -version
-
-# Kiểm tra phiên bản Maven
-RUN mvn -version
-
-# Chạy Maven để build project, sử dụng cache mount
-RUN --mount=type=cache,id=s/my-service-m2-cache,target=/root/.m2 mvn -DoutputFile=target/mvn-dependency-list.log -B -DskipTests clean dependency:list install
+FROM eclipse-temurin:20-jre
+ARG PORT
+ENV PORT=${PORT}
+COPY --from=build /app/app.jar .
+RUN useradd runtime
+USER runtime
+ENTRYPOINT [ "java", "-Dserver.port=${PORT}", "-jar", "app.jar" ]
