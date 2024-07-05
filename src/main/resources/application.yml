@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 3306
 spring:
   datasource:
     url: mysql://root:kXNbzagWVLEVIVAgqehnCSVddQjMOuzs@viaduct.proxy.rlwy.net:34508/railway
