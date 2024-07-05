@@ -16,5 +16,5 @@ RUN java -version
 # Kiểm tra phiên bản Maven
 RUN mvn -version
 
-# Chạy Maven để build project
-RUN --mount=type=cache,id=my-cache-key--my-cache-id,target=/root/.m2 mvn -DoutputFile=target/mvn-dependency-list.log -B -DskipTests clean dependency:list install
+# Chạy Maven để build project, sử dụng cache mount
+RUN --mount=type=cache,id=s/my-service-m2-cache,target=/root/.m2 mvn -DoutputFile=target/mvn-dependency-list.log -B -DskipTests clean dependency:list install
