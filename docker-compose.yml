@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: vDVkTKJayYskyZBvTkhKMLAiXgpdagMX  # Mật khẩu cho người dùng root
+      MYSQL_DATABASE: railway  # Tên của database sẽ được tạo khi container khởi động
+    ports:
+      - '3306:3306'  # Mở cổng 3306 của máy host và gán vào cổng 3306 của container MySQL
