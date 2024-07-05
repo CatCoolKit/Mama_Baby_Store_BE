@@ -14,6 +14,6 @@ RUN --mount=type=cache,id=s/061a13a1-ae8a-4ccd-8e8b-e20e0b403b71-m2/repository,t
     mvn -DoutputFile=target/mvn-dependency-list.log -B -DskipTests clean dependency:list install
 
 # Giai đoạn cuối, sử dụng JRE để giảm kích thước ảnh
-FROM openjdk:17-jrk
+FROM openjdk:17-jre
 COPY --from=build /app/target/*.jar /app/app.jar
 CMD ["java", "-jar", "/app/app.jar"]
