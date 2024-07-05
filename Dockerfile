@@ -17,4 +17,4 @@ RUN java -version
 RUN mvn -version
 
 # Chạy Maven để build project
-RUN --mount=type=cache,target=/root/.m2 mvn -DoutputFile=target/mvn-dependency-list.log -B -DskipTests clean dependency:list install
+RUN --mount=type=cache,id=Hello011,target=/root/.m2 mvn -DoutputFile=target/mvn-dependency-list.log -B -DskipTests clean dependency:list install
