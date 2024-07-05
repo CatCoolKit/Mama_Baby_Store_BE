@@ -1,12 +1,20 @@
-version: '3.8'
+# Sử dụng OpenJDK 21 làm base image
+FROM openjdk:21-jdk
 
-services:
+# Đặt thư mục làm việc trong container
+WORKDIR /app
 
-  db:
-    image: mysql
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: vDVkTKJayYskyZBvTkhKMLAiXgpdagMX  # Mật khẩu cho người dùng root
-      MYSQL_DATABASE: railway  # Tên của database sẽ được tạo khi container khởi động
-    ports:
-      - '3306:3306'  # Mở cổng 3306 của máy host và gán vào cổng 3306 của container MySQL
+# Sao chép nội dung hiện tại vào thư mục làm việc trong container
+COPY . /app
+
+# Cập nhật danh sách package và cài đặt Maven
+RUN apt-get update && apt-get install -y maven
+
+# Kiểm tra phiên bản JDK
+RUN java -version
+
+# Kiểm tra phiên bản Maven
+RUN mvn -version
+
+# Chạy Maven để build project, sử dụng cache mount
+RUN --mount=type=cache,id=s/my-service-m2-cache,target=/root/.m2 mvn -DoutputFile=target/mvn-dependency-list.log -B -DskipTests clean dependency:list install
