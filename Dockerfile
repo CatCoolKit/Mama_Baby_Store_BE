@@ -1,19 +1,13 @@
-# Sử dụng JDK 17 làm base image cho giai đoạn build
+# Sử dụng OpenJDK 17 để build ứng dụng
 FROM openjdk:17-jdk AS build
 
-# Sao chép mã nguồn ứng dụng vào thư mục /app trong container
-COPY . /app
-WORKDIR /app
+# Bước build ở đây
 
-# Cài đặt Maven và các phụ thuộc cần thiết
-RUN apt-get update && \
-    apt-get install -y maven
+# Giai đoạn cuối, sử dụng JDK để build JAR và sau đó sử dụng JRE để giảm kích thước ảnh
+FROM openjdk:17-jdk
 
-# Biên dịch và xây dựng dự án sử dụng Maven, sử dụng cache mount
-RUN --mount=type=cache,id=s/061a13a1-ae8a-4ccd-8e8b-e20e0b403b71-m2/repository,target=/app/.m2/repository \
-    mvn -DoutputFile=target/mvn-dependency-list.log -B -DskipTests clean dependency:list install
-
-# Giai đoạn cuối, sử dụng JRE để giảm kích thước ảnh
-FROM openjdk:17-jre
+# Copy JAR từ giai đoạn build trước vào ảnh mới
 COPY --from=build /app/target/*.jar /app/app.jar
+
+# CMD để chạy ứng dụng
 CMD ["java", "-jar", "/app/app.jar"]
