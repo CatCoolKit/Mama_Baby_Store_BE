@@ -3,7 +3,6 @@ package com.myweb.mamababy.filters;
 import com.myweb.mamababy.components.JwtTokenUtil;
 
 import com.myweb.mamababy.models.User;
-import com.myweb.mamababy.repositories.BlacklistedTokenRepository;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -34,9 +33,6 @@ public class JwtTokenFilter extends OncePerRequestFilter{
 
     @Autowired
     private final JwtTokenUtil jwtTokenUtil;
-
-    @Autowired
-    private BlacklistedTokenRepository blacklistedTokenRepository;
 
     @Override
     protected void doFilterInternal(@NonNull  HttpServletRequest request,
@@ -69,13 +65,6 @@ public class JwtTokenFilter extends OncePerRequestFilter{
 //                    authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 //                    SecurityContextHolder.getContext().setAuthentication(authenticationToken);
 //                }
-//            }
-
-//             Check if token is blacklisted
-//            if (blacklistedTokenRepository.findByToken(token).isPresent()) {
-//                logger.warn("JWT Token is blacklisted");
-//                response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Token is blacklisted");
-//                return;
 //            }
 
             filterChain.doFilter(request, response); //enable bypass
