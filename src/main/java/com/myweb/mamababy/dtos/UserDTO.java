@@ -35,7 +35,7 @@ public class UserDTO {
     private String phoneNumber;
 
     @JsonProperty("status")
-    private Boolean status;
+    private boolean status;
 
     @JsonProperty("roleId")
     private int roleId;
