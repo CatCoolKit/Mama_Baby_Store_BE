@@ -91,7 +91,7 @@ public class CommentService implements ICommentService{
 
     private List<Comment> handleEmptyList(List<Comment> comments) {
         if (comments == null || comments.isEmpty()) {
-            return Collections.emptyList(); // hoặc trả về null
+            return Collections.emptyList();
         }
         return comments;
     }
@@ -109,7 +109,6 @@ public class CommentService implements ICommentService{
         List<Comment> existingCom1 = commentRepository.findByUserId(commentDTO.getUserId());
         Comment existingCom;
 
-        // Kiểm tra xem danh sách existingCom1 có chứa Id hay không
         boolean isIdExist = existingCom1.stream()
                 .anyMatch(comment -> comment.getId() == Id);
 
