@@ -30,7 +30,7 @@ open:
 payment:
   vnpay:
     url: https://sandbox.vnpayment.vn/paymentv2/vpcpay.html
-    returnUrl: http://localhost:8080/mamababy/payment/vn-pay-callback
+    returnUrl: https://mamababy-swp.vercel.app/mamababy/payment/vn-pay-callback
     tmnCode: ZYVDT6EC
     secretKey: O0FQ4IFU6EO79AV2YPTWMKCGK7T3WROH
     version: 2.1.0
