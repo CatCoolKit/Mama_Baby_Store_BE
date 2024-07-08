@@ -50,11 +50,11 @@ public class VnpayController {
 
             if (status.equals("00")) {
                 statusOrderService.createStatusOrder(new StatusOrderDTO(orderId, "PENDING"));
-                redirectView = new RedirectView("http://localhost:3000/successPayment");
+                redirectView = new RedirectView("https://mamababy-swp.vercel.app/successPayment");
                 redirectView.addStaticAttribute("orderId", orderId);
                 redirectView.addStaticAttribute("storeId", storeId);
             } else {
-                redirectView = new RedirectView("http://localhost:3000/failedPayment");
+                redirectView = new RedirectView("https://mamababy-swp.vercel.app/failedPayment");
                 redirectView.addStaticAttribute("orderId", orderId);
                 redirectView.addStaticAttribute("storeId", storeId);
             }
