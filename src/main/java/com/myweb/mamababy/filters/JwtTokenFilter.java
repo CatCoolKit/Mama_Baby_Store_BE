@@ -45,27 +45,27 @@ public class JwtTokenFilter extends OncePerRequestFilter{
                 filterChain.doFilter(request, response); //enable bypass
                 return;
             }
-//            final String authHeader = request.getHeader("Authorization");
-//            if (authHeader == null || !authHeader.startsWith("Bearer ")) {
-//                response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized");
-//                return;
-//            }
-//            final String token = authHeader.substring(7);
-//            final String username = jwtTokenUtil.extractUserName(token);
-//            if (username != null
-//                    && SecurityContextHolder.getContext().getAuthentication() == null) {
-//                User userDetails = (User) userDetailsService.loadUserByUsername(username);
-//                if(jwtTokenUtil.validateToken(token, userDetails)) {
-//                    UsernamePasswordAuthenticationToken authenticationToken =
-//                            new UsernamePasswordAuthenticationToken(
-//                                    userDetails,
-//                                    null,
-//                                    userDetails.getAuthorities()
-//                            );
-//                    authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-//                    SecurityContextHolder.getContext().setAuthentication(authenticationToken);
-//                }
-//            }
+            final String authHeader = request.getHeader("Authorization");
+            if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+                response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized");
+                return;
+            }
+            final String token = authHeader.substring(7);
+            final String username = jwtTokenUtil.extractUserName(token);
+            if (username != null
+                    && SecurityContextHolder.getContext().getAuthentication() == null) {
+                User userDetails = (User) userDetailsService.loadUserByUsername(username);
+                if(jwtTokenUtil.validateToken(token, userDetails)) {
+                    UsernamePasswordAuthenticationToken authenticationToken =
+                            new UsernamePasswordAuthenticationToken(
+                                    userDetails,
+                                    null,
+                                    userDetails.getAuthorities()
+                            );
+                    authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+                    SecurityContextHolder.getContext().setAuthentication(authenticationToken);
+                }
+            }
 
             filterChain.doFilter(request, response); //enable bypass
         }catch (Exception e) {
@@ -77,6 +77,7 @@ public class JwtTokenFilter extends OncePerRequestFilter{
         final List<Pair<String, String>> bypassTokens = Arrays.asList(
                 Pair.of(String.format("%s/users/register", apiPrefix), "POST"),
                 Pair.of(String.format("%s/users/login", apiPrefix), "POST"),
+                Pair.of(String.format("%s/users/all", apiPrefix), "GET"),
                 Pair.of(String.format("%s/stores", apiPrefix), "GET"),
                 Pair.of(String.format("%s/products", apiPrefix), "GET"),
                 Pair.of(String.format("%s/products/images/**", apiPrefix), "GET"),

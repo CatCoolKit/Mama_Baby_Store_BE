@@ -218,21 +218,21 @@ public class ProductController {
                 .build());
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
-    @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteProduct(@PathVariable int id) {
-        try {
-            Product deleteProduct = productService.deleteProduct(id);
-            return ResponseEntity.ok(ResponseObject.builder()
-                    .data(ProductResponse.fromProduct(deleteProduct))
-                    .message(String.format("Product with id = %d deleted successfully", id))
-                    .status(HttpStatus.OK)
-                    .build());
-
-        }catch (Exception e){
-            return ResponseEntity.badRequest().body(e.getMessage());
-        }
-    }
+//    @CrossOrigin(origins = "http://localhost:3000")
+//    @DeleteMapping("/{id}")
+//    public ResponseEntity<?> deleteProduct(@PathVariable int id) {
+//        try {
+//            Product deleteProduct = productService.deleteProduct(id);
+//            return ResponseEntity.ok(ResponseObject.builder()
+//                    .data(ProductResponse.fromProduct(deleteProduct))
+//                    .message(String.format("Product with id = %d deleted successfully", id))
+//                    .status(HttpStatus.OK)
+//                    .build());
+//
+//        }catch (Exception e){
+//            return ResponseEntity.badRequest().body(e.getMessage());
+//        }
+//    }
 
     @CrossOrigin(origins = "http://localhost:3000")
     @PutMapping(value = "/{id}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
