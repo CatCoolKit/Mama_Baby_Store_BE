@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.awt.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -36,10 +37,10 @@ public class Article {
     private Store store;
 
     @Column(name = "created_at ")
-    private Date created_at;
+    private LocalDateTime created_at;
 
     @Column(name = "updated_at ")
-    private Date updated_at;
+    private LocalDateTime updated_at;
 
     @Column(name = "status")
     private Boolean status;

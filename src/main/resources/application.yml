@@ -24,7 +24,7 @@ open:
     title: Mamababy API
     version: 1.0.0
     description: Mota API service
-    serverUrl: http://localhost:8080
+    serverUrl: https://mamababy-swp.vercel.app
     serverName: server test
 
 payment:

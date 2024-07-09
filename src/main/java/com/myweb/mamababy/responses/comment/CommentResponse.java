@@ -39,7 +39,7 @@ public class CommentResponse {
     @Temporal(TemporalType.TIMESTAMP)
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "UTC")
     @JsonProperty("date")
-    private Date date;
+    private LocalDateTime date;
 
     @JsonProperty("status")
     private Boolean status;
