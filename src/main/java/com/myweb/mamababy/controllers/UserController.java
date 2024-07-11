@@ -214,4 +214,20 @@ public class UserController {
         }
     }
 
+    //http://localhost:8088/mamababy/users/details
+    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/{id}")
+    public ResponseEntity<?> getUserById(
+            @PathVariable int id
+    ) throws Exception {
+        User user = userService.getUserById(id);
+        return ResponseEntity.ok().body(
+                ResponseObject.builder()
+                        .message("Get user's detail successfully")
+                        .data(UserResponse.fromUser(user))
+                        .status(HttpStatus.OK)
+                        .build()
+        );
+    }
+
 }
