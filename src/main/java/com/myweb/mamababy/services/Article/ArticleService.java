@@ -6,7 +6,6 @@ import com.myweb.mamababy.exceptions.DataNotFoundException;
 import com.myweb.mamababy.models.*;
 import com.myweb.mamababy.repositories.*;
 import com.myweb.mamababy.responses.article.ArticleResponse;
-import com.myweb.mamababy.responses.product.ProductResponse;
 import com.myweb.mamababy.services.User.IUserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -15,16 +14,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.*;
-import java.util.stream.Collectors;
 
 
 @Service
@@ -57,8 +52,8 @@ public class ArticleService implements IArticleService{
                 .product_recom(articleDTO.getProduct_recom())
                 .link_image(fileName)
                 .store(existingStore)
-                .created_at(LocalDateTime.now().plusHours(7))
-                .updated_at(LocalDateTime.now().plusHours(7))
+                .created_at(new Date())
+                .updated_at(new Date())
                 .status(articleDTO.getStatus())
                 .build();
         return articleRepository.save(newArticle);
@@ -125,7 +120,7 @@ public class ArticleService implements IArticleService{
             existingArticle.setHeader(articleDTO.getHeader());
             existingArticle.setContent(articleDTO.getContent());
             existingArticle.setProduct_recom(articleDTO.getProduct_recom());
-            existingArticle.setUpdated_at(LocalDateTime.now().plusHours(7));
+            existingArticle.setUpdated_at(new Date());
             existingArticle.setStatus(articleDTO.getStatus());
 
             if(file != null && !file.isEmpty()) {
@@ -159,7 +154,7 @@ public class ArticleService implements IArticleService{
 
     public Boolean checkFileImage(MultipartFile file) {
         Boolean result = false;
-        if(file.getSize() > 10 * 1024 * 1024 || file.getOriginalFilename() == null) { // Kích thước > 10MB
+        if(file.getSize() > 10 * 1024 * 1024 || file.getOriginalFilename() == null) {
             return result;
         }
         String contentType = file.getContentType();
@@ -173,6 +168,7 @@ public class ArticleService implements IArticleService{
 
     @Override
     public void deleteFile(String filename) throws IOException {
+
         Path uploadDir = Paths.get(UPLOADS_FOLDER);
         Path filePath = uploadDir.resolve(filename);
 

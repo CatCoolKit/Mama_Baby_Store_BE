@@ -1,19 +1,12 @@
 package com.myweb.mamababy.controllers;
 
-import com.myweb.mamababy.dtos.ExchangeDTO;
 import com.myweb.mamababy.dtos.RefundDTO;
-import com.myweb.mamababy.models.Exchange;
-import com.myweb.mamababy.models.Order;
 import com.myweb.mamababy.models.Refund;
 import com.myweb.mamababy.responses.ResponseObject;
-import com.myweb.mamababy.responses.exchange.ExchangeListResponse;
-import com.myweb.mamababy.responses.exchange.ExchangeResponse;
-import com.myweb.mamababy.responses.order.OrderResponse;
 import com.myweb.mamababy.responses.refunds.RefundListResponse;
 import com.myweb.mamababy.responses.refunds.RefundResponse;
 import com.myweb.mamababy.services.Refund.IRefundService;
 import jakarta.validation.Valid;
-import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -26,6 +19,7 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("${api.prefix}/refunds")
@@ -67,16 +61,13 @@ public class RefundController {
             @RequestParam(defaultValue = "12", name = "limit") int limit
     ){
         int totalPages = 0;
-        // Tạo Pageable từ thông tin trang và giới hạn
         PageRequest pageRequest = PageRequest.of(
                 page, limit,
                 //Sort.by("createdAt").descending()
                 Sort.by("id").ascending()
         );
-        //Lay tat ca cac product theo yeu cau
         Page<RefundResponse> refundPage = refundService
                 .getAllRefund(status, pageRequest);
-        // Lấy tổng số trang
         totalPages = refundPage.getTotalPages();
         List<RefundResponse> refunds = refundPage.getContent();
 

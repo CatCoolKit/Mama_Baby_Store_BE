@@ -7,16 +7,15 @@ import com.myweb.mamababy.models.Store;
 import com.myweb.mamababy.models.Voucher;
 import com.myweb.mamababy.repositories.StoreRepository;
 import com.myweb.mamababy.repositories.VoucherRepository;
-import com.myweb.mamababy.services.Actived.ActivedService;
 import com.myweb.mamababy.services.Actived.IActivedService;
 import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
@@ -38,7 +37,12 @@ public class VoucherService implements IVoucherService{
                 .findById(voucherDTO.getStoreId())
                 .orElseThrow(() ->
                         new DataNotFoundException(
+
                                 "Cannot find store with id: "+voucherDTO.getStoreId()));
+
+        if (!existingStore.isActive() || existingStore.getValidDate().isBefore(LocalDateTime.now().plusHours(7))) {
+            throw new DataNotFoundException("Invalid store is inActive");
+        }
 
         Voucher newVoucher = Voucher.builder()
 
@@ -73,7 +77,8 @@ public class VoucherService implements IVoucherService{
         for(Voucher voucher : listAll) {
             LocalDateTime nowPlus7Hours = LocalDateTime.now().plusHours(7);
             LocalDate nowPlus7HoursDate = nowPlus7Hours.toLocalDate();
-            if (voucher.isActive() && !(nowPlus7HoursDate.isAfter(voucher.getEndAt()) || nowPlus7HoursDate.isEqual(voucher.getEndAt()))) {                boolean isInActivedList = false;
+            if (voucher.isActive() && !(nowPlus7HoursDate.isAfter(voucher.getEndAt()) || nowPlus7HoursDate.isEqual(voucher.getEndAt()))) {
+                boolean isInActivedList = false;
                 for (Actived actived : activedList) {
                     if (actived.getVoucherId() == voucher.getId()) {
                         isInActivedList = true;

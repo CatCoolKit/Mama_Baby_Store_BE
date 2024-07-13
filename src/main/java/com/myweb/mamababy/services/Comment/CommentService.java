@@ -1,21 +1,17 @@
 package com.myweb.mamababy.services.Comment;
 
 import com.myweb.mamababy.components.JwtTokenUtil;
-import com.myweb.mamababy.dtos.CartItemDTO;
 import com.myweb.mamababy.dtos.CommentDTO;
 import com.myweb.mamababy.exceptions.DataNotFoundException;
-import com.myweb.mamababy.exceptions.ExpiredTokenException;
 import com.myweb.mamababy.models.*;
 import com.myweb.mamababy.repositories.CommentRepository;
 import com.myweb.mamababy.repositories.ProductRepository;
 import com.myweb.mamababy.repositories.UserRepository;
 import com.myweb.mamababy.services.User.IUserService;
-import com.myweb.mamababy.services.User.UserService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.*;
 
 @Service
@@ -48,7 +44,7 @@ public class CommentService implements ICommentService{
             Comment newComment = Comment.builder()
                     .rating(commentDTO.getRating())
                     .comment(commentDTO.getComment())
-                    .date(LocalDateTime.now().plusHours(7))
+                    .date(new Date())
                     .status(true)
                     .build();
             newComment.setProduct(product);
@@ -92,7 +88,7 @@ public class CommentService implements ICommentService{
 
     private List<Comment> handleEmptyList(List<Comment> comments) {
         if (comments == null || comments.isEmpty()) {
-            return Collections.emptyList();
+            return Collections.emptyList(); // hoặc trả về null
         }
         return comments;
     }
@@ -110,6 +106,7 @@ public class CommentService implements ICommentService{
         List<Comment> existingCom1 = commentRepository.findByUserId(commentDTO.getUserId());
         Comment existingCom;
 
+        // Kiểm tra xem danh sách existingCom1 có chứa Id hay không
         boolean isIdExist = existingCom1.stream()
                 .anyMatch(comment -> comment.getId() == Id);
 

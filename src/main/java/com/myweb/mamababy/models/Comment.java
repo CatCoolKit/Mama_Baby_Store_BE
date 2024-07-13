@@ -2,11 +2,9 @@ package com.myweb.mamababy.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -40,7 +38,7 @@ public class Comment {
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "date")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "UTC")
-    private LocalDateTime date;
+    private Date date;
 
     @Column(name = "status")
     private Boolean status;

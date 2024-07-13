@@ -9,13 +9,13 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
     properties:
       hibernate:
       dialect: org.hibernate.dialect.MySQL8Dialect
       format_sql: true
 api:
-  prefix: mamababy
+  prefix: /mamababy
 jwt:
   expiration: 86400 # 24h
   secretKey: TaqlmGv1iEDMRiFp/pHuID1+T84IABfuA0xXh4GhiUI=
@@ -24,13 +24,13 @@ open:
     title: Mamababy API
     version: 1.0.0
     description: Mota API service
-    serverUrl: https://mamababy-swp.vercel.app
+    serverUrl: http://localhost:8080
     serverName: server test
 
 payment:
   vnpay:
     url: https://sandbox.vnpayment.vn/paymentv2/vpcpay.html
-    returnUrl: https://swp-be.onrender.com/mamababy/payment/vn-pay-callback
+    returnUrl: http://localhost:8080/mamababy/payment/vn-pay-callback
     tmnCode: ZYVDT6EC
     secretKey: O0FQ4IFU6EO79AV2YPTWMKCGK7T3WROH
     version: 2.1.0

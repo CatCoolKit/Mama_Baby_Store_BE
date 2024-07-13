@@ -12,9 +12,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.validation.FieldError;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("${api.prefix}/categories")
@@ -25,7 +23,6 @@ public class CategoryController {
 
     @PostMapping("")
     @CrossOrigin(origins = "http://localhost:3000")
-    //Nếu tham số truyền vào là 1 object thì sao ? => Data Transfer Object = Request Object
     public ResponseEntity<?> createCategory(
             @Valid @RequestBody CategoryDTO categoryDTO,
             BindingResult result) {
@@ -40,13 +37,9 @@ public class CategoryController {
         return ResponseEntity.ok(category);
     }
 
-    //Hiện tất cả các categories
     @GetMapping("")
     @CrossOrigin(origins = "http://localhost:3000")
-    public ResponseEntity<?> getAllCategories(
-            @RequestParam(defaultValue = "0",name = "page")     int page,
-            @RequestParam(defaultValue = "12",name = "limit")    int limit
-    ) {
+    public ResponseEntity<?> getAllCategories() {
         List<Category> categories = categoryService.findByIsActiveTrue();
         return ResponseEntity.ok(ResponseObject
                 .builder()
@@ -58,10 +51,7 @@ public class CategoryController {
 
     @GetMapping("/admin")
     @CrossOrigin(origins = "http://localhost:3000")
-    public ResponseEntity<?> getAllCategoriesIsTrue(
-        @RequestParam(defaultValue = "0",name = "page")     int page,
-        @RequestParam(defaultValue = "12",name = "limit")    int limit
-    ) {
+    public ResponseEntity<?> getAllCategoriesIsTrue() {
         List<Category> categories = categoryService.getAllCategories();
         return ResponseEntity.ok(ResponseObject
             .builder()

@@ -4,7 +4,6 @@ import com.myweb.mamababy.components.VnpayUtil;
 import com.myweb.mamababy.configurations.VnpayConfig;
 import com.myweb.mamababy.dtos.PaymentDTO;
 import com.myweb.mamababy.exceptions.DataNotFoundException;
-import com.myweb.mamababy.models.Store;
 import com.myweb.mamababy.repositories.StoreRepository;
 import com.myweb.mamababy.responses.payment.VnpayResponse;
 import jakarta.servlet.http.HttpServletRequest;
@@ -26,7 +25,7 @@ public class PaymentService implements IPaymentService{
         String bankCode = paymentDTO.getBankCode();
         Map<String, String> vnpParamsMap = vnPayConfig.getVNPayConfig();
         vnpParamsMap.put("vnp_Amount", String.valueOf(amount));
-        vnpParamsMap.put("vnp_OrderInfo", paymentDTO.getOrderId() + "|" + paymentDTO.getStoreId());
+        vnpParamsMap.put("vnp_OrderInfo", paymentDTO.getOrderId() + "|" + paymentDTO.getStoreId() + "|" + paymentDTO.getPackageId());
         if (bankCode != null && !bankCode.isEmpty()) {
             vnpParamsMap.put("vnp_BankCode", bankCode);
         }

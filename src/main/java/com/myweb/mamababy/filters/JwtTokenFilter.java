@@ -2,10 +2,7 @@ package com.myweb.mamababy.filters;
 
 import com.myweb.mamababy.components.JwtTokenUtil;
 
-import com.myweb.mamababy.models.User;
-
 import jakarta.servlet.FilterChain;
-import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.NonNull;
@@ -13,10 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.util.Pair;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.*;
 
@@ -77,20 +71,26 @@ public class JwtTokenFilter extends OncePerRequestFilter{
         final List<Pair<String, String>> bypassTokens = Arrays.asList(
                 Pair.of(String.format("%s/users/register", apiPrefix), "POST"),
                 Pair.of(String.format("%s/users/login", apiPrefix), "POST"),
-                Pair.of(String.format("%s/stores", apiPrefix), "GET"),
-                Pair.of(String.format("%s/products", apiPrefix), "GET"),
+                Pair.of(String.format("%s/stores**", apiPrefix), "GET"),
+                Pair.of(String.format("%s/products**", apiPrefix), "GET"),
                 Pair.of(String.format("%s/products/images/**", apiPrefix), "GET"),
-                Pair.of(String.format("%s/categories", apiPrefix), "GET"),
-                Pair.of(String.format("%s/brands", apiPrefix), "GET"),
-                Pair.of(String.format("%s/age", apiPrefix), "GET"),
-                Pair.of(String.format("%s/comments", apiPrefix), "GET"),
-                Pair.of(String.format("%s/article", apiPrefix), "GET"),
+                Pair.of(String.format("%s/categories**", apiPrefix), "GET"),
+                Pair.of(String.format("%s/brands**", apiPrefix), "GET"),
+                Pair.of(String.format("%s/age**", apiPrefix), "GET"),
+                Pair.of(String.format("%s/comments**", apiPrefix), "GET"),
+                Pair.of(String.format("%s/article**", apiPrefix), "GET"),
                 Pair.of(String.format("%s/article/images/**", apiPrefix), "GET"),
-                Pair.of(String.format("%s/vouchers", apiPrefix), "GET")
+                Pair.of(String.format("%s/vouchers**", apiPrefix), "GET")
         );
-        for(Pair<String, String> bypassToken: bypassTokens) {
-            if (request.getServletPath().contains(bypassToken.getFirst()) &&
-                    request.getMethod().equals(bypassToken.getSecond())) {
+        String requestPath = request.getServletPath();
+        String requestMethod = request.getMethod();
+
+        for (Pair<String, String> token : bypassTokens) {
+            String path = token.getFirst();
+            String method = token.getSecond();
+            // Check if the request path and method match any pair in the bypassTokens list
+            if (requestPath.matches(path.replace("**", ".*"))
+                    && requestMethod.equalsIgnoreCase(method)) {
                 return true;
             }
         }

@@ -64,6 +64,7 @@ public class StoreService implements IStoreService{
                 .status("PROCESSING")
                 .isActive(false)
                 .requestDate(LocalDateTime.now().plusHours(7))
+                .validDate(LocalDateTime.now().plusHours(7))
                 .build();
         newStore.setUser(existingUser);
 
@@ -100,7 +101,7 @@ public class StoreService implements IStoreService{
     }
 
     @Override
-    public Store updateStore(int id, StoreDTO storeDTO, MultipartFile file) throws IOException {
+    public Store updateStore(int id, StoreDTO storeDTO) throws IOException {
         // Tìm cửa hàng tồn tại trong DB
         Store existingStore = getStoreById(id);
 
@@ -117,12 +118,6 @@ public class StoreService implements IStoreService{
             existingStore.setPhone(storeDTO.getPhone());
         }
 
-        if(file != null && !file.isEmpty()) {
-            deleteFile(existingStore.getLicenseUrl());
-            String fileName = storeFile(file);
-            existingStore.setLicenseUrl(fileName);
-        }
-
         storeRepository.save(existingStore);
         return existingStore;
     }
@@ -133,6 +128,7 @@ public class StoreService implements IStoreService{
 
         existingStore.setStatus(storeDTO.getStatus());
         existingStore.setActive(storeDTO.isActive());
+        existingStore.setValidDate(LocalDateTime.now().plusHours(7).plusMonths(2));
 
         return storeRepository.save(existingStore);
     }

@@ -6,21 +6,12 @@ import com.myweb.mamababy.exceptions.DataNotFoundException;
 import com.myweb.mamababy.models.*;
 import com.myweb.mamababy.repositories.*;
 import com.myweb.mamababy.responses.exchange.ExchangeResponse;
-import com.myweb.mamababy.responses.product.ProductResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.*;
 
@@ -116,24 +107,6 @@ public class ExchangeService implements IExchangeService{
     public Exchange updateExchange(int id, ExchangeDTO exchangeDTO) throws Exception {
         Exchange existingExchange = getExchangeById(id);
         if (existingExchange != null) {
-
-//            OrderDetail existingOrderDetail = orderDetailRepository
-//                    .findById(exchangeDTO.getOrderDetailId())
-//                    .orElseThrow(() ->
-//                            new DataNotFoundException(
-//                                    "Cannot find order detail with id: "+exchangeDTO.getOrderDetailId()));
-//            User existingUser = userRepository
-//                    .findById(exchangeDTO.getUserId())
-//                    .orElseThrow(() ->
-//                            new DataNotFoundException(
-//                                    "Cannot find user with id: "+exchangeDTO.getUserId()));
-//
-//            existingExchange.setOrderDetail(existingOrderDetail);
-//            existingExchange.setUser(existingUser);
-//
-//            if(exchangeDTO.getQuantity() >= 0) {
-//                existingProduct.setPrice(productDTO.getPrice());
-//            }
             if (exchangeDTO.getStatus() != null &&
                     !exchangeDTO.getStatus().isEmpty())
                 existingExchange.setStatus(exchangeDTO.getStatus());
@@ -147,11 +120,6 @@ public class ExchangeService implements IExchangeService{
     @Override
     public List<ExchangeResponse> findByUserId(int userId) throws DataNotFoundException {
         List<Exchange> exchanges = exchangeRepository.findByUserId(userId);
-
-//        if (exchanges.isEmpty()) {
-//            throw new DataNotFoundException("Cannot find exchange for user with id: " + userId);
-//        }
-
         List<ExchangeResponse> exchangeResponses = new ArrayList<>();
         for(Exchange exchange :exchanges){
             exchangeResponses.add(ExchangeResponse.fromExchange(exchange));
@@ -162,11 +130,6 @@ public class ExchangeService implements IExchangeService{
     @Override
     public List<ExchangeResponse> findByStoreId(int storeId) throws DataNotFoundException {
         List<Exchange> exchanges = exchangeRepository.findByStoreId(storeId);
-
-//        if (exchanges.isEmpty()) {
-//            throw new DataNotFoundException("Cannot find exchange for store with id: " + storeId);
-//        }
-
         List<ExchangeResponse> exchangeResponses = new ArrayList<>();
         for(Exchange exchange :exchanges){
             exchangeResponses.add(ExchangeResponse.fromExchange(exchange));

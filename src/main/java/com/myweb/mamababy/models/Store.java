@@ -1,10 +1,9 @@
 package com.myweb.mamababy.models;
 
 import jakarta.persistence.*;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-
 import lombok.*;
+
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "stores")
@@ -42,6 +41,9 @@ public class Store {
 
     @Column(name = "request_date")
     private LocalDateTime requestDate;
+
+    @Column(name = "valid_date")
+    private LocalDateTime validDate;
 
     @OneToOne
     @JoinColumn(name = "user_id")
