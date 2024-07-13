@@ -57,11 +57,11 @@ public class WebSecurityConfig implements  WebMvcConfigurer{
                             .requestMatchers("**")
                             .permitAll()
 
-//                            .requestMatchers(
-//                                    String.format("%s/users/register", apiPrefix),
-//                                    String.format("%s/users/login", apiPrefix)
-//                            )
-//                            .permitAll()
+                            .requestMatchers(
+                                    String.format("%s/users/register", apiPrefix),
+                                    String.format("%s/users/login", apiPrefix)
+                            )
+                            .permitAll()
 
 //                            .requestMatchers(GET,
 //                                    String.format("%s/active/**", apiPrefix)).hasAnyRole(Role.ADMIN)
@@ -117,8 +117,8 @@ public class WebSecurityConfig implements  WebMvcConfigurer{
 //                            .requestMatchers(PUT,
 //                                    String.format("%s/article/**", apiPrefix)).hasAnyRole(Role.STAFF)
 //
-//                              .requestMatchers(GET,
-//                                      String.format("%s/users/**", apiPrefix)).permitAll()
+                              .requestMatchers(GET,
+                                      String.format("%s/users/**", apiPrefix)).permitAll()
 //                            .requestMatchers(GET,
 //                                    String.format("%s/users/details", apiPrefix)).permitAll()
 //                            .requestMatchers(GET,
