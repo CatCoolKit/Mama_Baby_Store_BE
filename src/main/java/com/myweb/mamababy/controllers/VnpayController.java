@@ -65,7 +65,7 @@ public class VnpayController {
                 if(orderId != 0 && packageId == 0){
                     statusOrderService.createStatusOrder(new StatusOrderDTO(orderId, "PENDING"));
 
-                    redirectView = new RedirectView("http://localhost:3000/successPayment");
+                    redirectView = new RedirectView("https://mamababy-swp.vercel.app/successPayment");
                     redirectView.addStaticAttribute("orderId", orderId);
                     redirectView.addStaticAttribute("storeId", storeId);
                 }else if (orderId == 0 && packageId != 0){
@@ -87,18 +87,18 @@ public class VnpayController {
                             .build();
                     storePackageService.createStorePackage(newStorePackageDTO);
 
-                    redirectView = new RedirectView("http://localhost:3000/staff/successPackagePayment");
+                    redirectView = new RedirectView("https://mamababy-swp.vercel.app/staff/successPackagePayment");
                     redirectView.addStaticAttribute("packageId", packageId);
                     redirectView.addStaticAttribute("storeId", storeId);
                 }
 
             } else {
                 if(orderId != 0 && packageId == 0){
-                    redirectView = new RedirectView("http://localhost:3000/failedPayment");
+                    redirectView = new RedirectView("https://mamababy-swp.vercel.app/failedPayment");
                     redirectView.addStaticAttribute("orderId", orderId);
                     redirectView.addStaticAttribute("storeId", storeId);
                 }else if (orderId == 0 && packageId != 0) {
-                    redirectView = new RedirectView("http://localhost:3000/staff/failedPackagePayment");
+                    redirectView = new RedirectView("https://mamababy-swp.vercel.app/staff/failedPackagePayment");
                     redirectView.addStaticAttribute("packageId", packageId);
                     redirectView.addStaticAttribute("storeId", storeId);
                 }
