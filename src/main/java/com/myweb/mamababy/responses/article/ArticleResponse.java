@@ -7,6 +7,7 @@ import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import lombok.*;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Getter
@@ -37,12 +38,12 @@ public class ArticleResponse {
     @Temporal(TemporalType.DATE)
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "UTC")
     @JsonProperty("created_at")
-    private Date created_at;
+    private LocalDateTime  created_at;
 
     @Temporal(TemporalType.DATE)
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "UTC")
     @JsonProperty("updated_at")
-    private Date updated_at;
+    private LocalDateTime updated_at;
 
     @JsonProperty("status")
     private boolean status;

@@ -19,6 +19,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.time.LocalDateTime;
 import java.util.*;
 
 
@@ -52,8 +53,8 @@ public class ArticleService implements IArticleService{
                 .product_recom(articleDTO.getProduct_recom())
                 .link_image(fileName)
                 .store(existingStore)
-                .created_at(new Date())
-                .updated_at(new Date())
+                .created_at(LocalDateTime.now().plusHours(7))
+                .updated_at(LocalDateTime.now().plusHours(7))
                 .status(articleDTO.getStatus())
                 .build();
         return articleRepository.save(newArticle);
@@ -120,7 +121,7 @@ public class ArticleService implements IArticleService{
             existingArticle.setHeader(articleDTO.getHeader());
             existingArticle.setContent(articleDTO.getContent());
             existingArticle.setProduct_recom(articleDTO.getProduct_recom());
-            existingArticle.setUpdated_at(new Date());
+            existingArticle.setUpdated_at(LocalDateTime.now().plusHours(7));
             existingArticle.setStatus(articleDTO.getStatus());
 
             if(file != null && !file.isEmpty()) {

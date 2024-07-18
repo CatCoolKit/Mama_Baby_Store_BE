@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -38,7 +39,7 @@ public class Comment {
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "date")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "UTC")
-    private Date date;
+    private LocalDateTime date;
 
     @Column(name = "status")
     private Boolean status;

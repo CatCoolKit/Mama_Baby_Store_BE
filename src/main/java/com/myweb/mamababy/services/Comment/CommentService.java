@@ -12,6 +12,7 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.*;
 
 @Service
@@ -44,7 +45,7 @@ public class CommentService implements ICommentService{
             Comment newComment = Comment.builder()
                     .rating(commentDTO.getRating())
                     .comment(commentDTO.getComment())
-                    .date(new Date())
+                    .date(LocalDateTime.now().plusHours(7))
                     .status(true)
                     .build();
             newComment.setProduct(product);
