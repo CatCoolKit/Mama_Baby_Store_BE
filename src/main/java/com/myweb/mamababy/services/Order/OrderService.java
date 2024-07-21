@@ -180,25 +180,13 @@ public class OrderService implements IOrderService{
     @Override
     public List<Order> findByUserId(int userId) throws DataNotFoundException {
 
-        List<Order> orders = orderRepository.findByUserId(userId);
-
-        if (orders.isEmpty()) {
-            throw new DataNotFoundException("Cannot find orders for user with id: " + userId);
-        }
-
-        return orders;
+        return orderRepository.findByUserId(userId);
     }
 
     @Override
     public List<Order> findByStoreId(int storeId) throws DataNotFoundException {
 
-        List<Order> orders = orderRepository.findByStoreId(storeId);
-
-        if (orders.isEmpty()) {
-            throw new DataNotFoundException("Cannot find orders for store with id: " + storeId);
-        }
-
-        return orders;
+        return orderRepository.findByStoreId(storeId);
     }
 
     @Override
